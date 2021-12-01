@@ -1,0 +1,6 @@
+{
+    "rust-analyzer.inlayHints.refreshOnInsertMode": true,
+    "rust-analyzer.hoverActions.linksInHover": true,
+    "rpc.ignoreWorkspaces":[],
+    "rpc.smallImage": "Real programmers use NeoVim"
+}

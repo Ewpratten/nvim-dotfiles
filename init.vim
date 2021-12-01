@@ -1,14 +1,10 @@
 " This is @ewpratten's NeoVim config file.
-"
-" TODOS:
-" - RustFmt
-" - Syntax highlighting
-" - Minimalist theme
 set encoding=utf-8
 
 " Nice features
 filetype plugin on
 syntax enable
+filetype plugin indent on
 set hidden
 set nobackup
 set nowritebackup
@@ -43,6 +39,20 @@ Plug 'winston0410/cmd-parser.nvim'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'jghauser/mkdir.nvim'
 Plug 'tamton-aquib/staline.nvim'
+Plug 'airblade/vim-gitgutter'
+Plug 'yggdroot/indentline'
+Plug 'rust-lang/rust.vim'
+Plug 'mattn/webapi-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'rafamadriz/friendly-snippets'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'RRethy/vim-illuminate'
+Plug 'tpope/vim-fugitive'
+Plug 'f-person/git-blame.nvim'
+Plug 'karb94/neoscroll.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -55,10 +65,17 @@ let bufferline.auto_hide = v:true
 let g:vscode_style = "dark"
 colorscheme vscode
 
+" Misc settings
+let g:rust_clip_command = 'xclip -selection clipboard'
+
 " Setup calls
 lua require'nvim-tree'.setup { auto_close = true }
 lua require("range-highlight").setup()
 lua require("plugin_setup/staline")
+lua require('neoscroll').setup()
+
+" Auto-Format settings
+let g:rustfmt_autosave = 1
 
 "---- Keybindings ----"
 " Use <c-space> to trigger completion.

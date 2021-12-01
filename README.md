@@ -42,5 +42,33 @@ Finally, install all plugins in neovim with:
 ```text
 :PlugInstall
 :Copilot setup
-:CocInstall coc-rust-analyzer
 ```
+
+## COC Plugins
+
+To install all needed COC plugins, run:
+
+```text
+:CocInstall coc-rust-analyzer
+:CocInstall coc-highlight
+:CocInstall coc-yaml
+:CocInstall coc-json
+:CocInstall coc-snippets
+:CocInstall coc-discord-rpc
+:CocInstall coc-spell-checker
+:CocInstall coc-git
+```
+
+## Reference
+
+The `<Leader>` key is `;` in my configs.
+
+| Action                         | Description               |
+|--------------------------------|---------------------------|
+| `:PlugInstall`                 | Install all plugins       |
+| `gcc`                          | Comment current line      |
+| `gc`                           | Comment current selection |
+| `<Leader><Leader>w`            | Switch to word jump mode  |
+| `<Leader><Leader>f[something]` | Search for `[something]`  |
+| `<C-space>`                    | Toggle autocomplete       |
+| `<C-b>`                        | Toggle the file explorer  |
