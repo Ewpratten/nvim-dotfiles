@@ -18,6 +18,7 @@ set updatetime=300
 set shortmess+=c
 set mouse+=a
 set termguicolors
+set number
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -57,7 +58,7 @@ colorscheme vscode
 " Setup calls
 lua require'nvim-tree'.setup { auto_close = true }
 lua require("range-highlight").setup()
-lua require('staline').setup{mode_icons={n='NRM',i='INS',c='CNG',v='VIS'}, sections={left={'>','mode','|','file_name',' ','branch'}, mid={'lsp'}, right={'line_column','<'}}, defaults={line_column=" Ln %l, Col %c"}}
+lua require("plugin_setup/staline")
 
 "---- Keybindings ----"
 " Use <c-space> to trigger completion.
