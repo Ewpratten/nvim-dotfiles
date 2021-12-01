@@ -3,7 +3,8 @@
 " TODOS:
 " - RustFmt
 " - Syntax highlighting
-" - Minimalist theme
+" - Minimalist them
+" - TabLine: https://github.com/romgrk/barbar.nvim
 set encoding=utf-8
 
 " Nice features
