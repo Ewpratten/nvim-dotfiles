@@ -15,6 +15,7 @@ set shortmess+=c
 set mouse+=a
 set termguicolors
 set number
+set guifont=Hack:h10
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -53,6 +54,8 @@ Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-fugitive'
 Plug 'f-person/git-blame.nvim'
 Plug 'karb94/neoscroll.nvim'
+Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
+Plug 'luukvbaal/stabilize.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -67,12 +70,18 @@ colorscheme vscode
 
 " Misc settings
 let g:rust_clip_command = 'xclip -selection clipboard'
+let g:neovide_fullscreen=v:false
+let neovide_remember_window_size = v:true
+let g:neovide_cursor_animation_length=0.05
+let g:neovide_cursor_trail_length=0.1
+
 
 " Setup calls
 lua require'nvim-tree'.setup { auto_close = true }
 lua require("range-highlight").setup()
 lua require("plugin_setup/staline")
 lua require('neoscroll').setup()
+lua require("stabilize").setup()
 
 " Auto-Format settings
 let g:rustfmt_autosave = 1
@@ -82,3 +91,4 @@ let g:rustfmt_autosave = 1
 inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <C-b> :NvimTreeToggle<CR>
 "nmap <Leader>i <Esc><Plug>(ale_fix)
+map <silent> <leader>w :lua require('nvim-window').pick()<CR>
