@@ -76,7 +76,10 @@ let neovide_remember_window_size = v:true
 let g:neovide_cursor_animation_length=0.05
 let g:neovide_cursor_trail_length=0.1
 highlight CursorLine guibg=#373737
-
+let g:gitblame_highlight_group = "CursorLine"
+let g:gitblame_date_format = '%r'
+let g:gitblame_message_template = '<author> - <date> - <summary>'
+let g:gitblame_enabled = 0
 
 " Setup calls
 lua require'nvim-tree'.setup { auto_close = true }
@@ -88,6 +91,22 @@ lua require("stabilize").setup()
 " Auto-Format settings
 let g:rustfmt_autosave = 1
 
+" Disable the arrow keys to make the vim purists happy
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+" Allow CTRL-Jump functionality I live off of
+noremap <C-l> e
+noremap <C-h> b
+
+" Enable VSCode-style Tab and Shift-Tab
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 "---- Keybindings ----"
 " Use <c-space> to trigger completion.
@@ -96,3 +115,4 @@ nnoremap <C-b> :NvimTreeToggle<CR>
 "nmap <Leader>i <Esc><Plug>(ale_fix)
 map <silent> <leader>w :lua require('nvim-window').pick()<CR>
 nmap <silent> <leader>d :call CocAction('jumpDefinition', 'tabe')<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
