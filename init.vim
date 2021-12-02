@@ -16,6 +16,7 @@ set mouse+=a
 set termguicolors
 set number
 set guifont=Hack:h10
+set cursorline
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -74,6 +75,7 @@ let g:neovide_fullscreen=v:false
 let neovide_remember_window_size = v:true
 let g:neovide_cursor_animation_length=0.05
 let g:neovide_cursor_trail_length=0.1
+highlight CursorLine guibg=#373737
 
 
 " Setup calls
@@ -86,9 +88,11 @@ lua require("stabilize").setup()
 " Auto-Format settings
 let g:rustfmt_autosave = 1
 
+
 "---- Keybindings ----"
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <C-b> :NvimTreeToggle<CR>
 "nmap <Leader>i <Esc><Plug>(ale_fix)
 map <silent> <leader>w :lua require('nvim-window').pick()<CR>
+nmap <silent> <leader>d :call CocAction('jumpDefinition', 'tabe')<CR>

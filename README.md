@@ -73,4 +73,5 @@ The `<Leader>` key is `;` in my configs.
 | `<C-space>`                    | Toggle autocomplete        |
 | `<C-b>`                        | Toggle the file explorer   |
 | `<Leader>w`                    | Enter window switcher mode |
-| `:bd` | Close a buffer |
+| `:bd`                          | Close a buffer             |
+| `<Leader>d`                    | Open definition in new tab |
