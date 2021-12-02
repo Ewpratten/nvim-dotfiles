@@ -38,6 +38,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 # Install Node
 nvm install v12
+nvm alias default 12
 ```
 
 Finally, install all plugins in neovim with:
