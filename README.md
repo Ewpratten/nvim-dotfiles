@@ -59,6 +59,8 @@ To install all needed COC plugins, run:
 :CocInstall coc-git
 ```
 
+*HINT: Place the above block in a buffer, use `ggyG` then `:@"` to execute it all in one go*
+
 ## Reference
 
 The `<Leader>` key is `;` in my configs.
