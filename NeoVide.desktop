@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Neovide
+Comment=Launch Neovide
+Type=Application
+Exec=/home/ewpratten/bin/neovide %F
+Icon=nvim
+Categories=

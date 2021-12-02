@@ -1,5 +1,8 @@
-# nvim-dotfiles
-Neovim dotfiles
+# NeoVim dotfiles
+
+This repository contains my personal configuration files for NeoVim, and is designed to be cloned straight into the config directory (`gh repo clone ewpratten/nvim-dotfiles ~/.config/nvim`)
+
+![](nvim-screenshot.png)
 
 ## Installation
 
@@ -35,6 +38,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 # Install Node
 nvm install v12
+nvm alias default 12
 ```
 
 Finally, install all plugins in neovim with:
@@ -75,4 +79,8 @@ The `<Leader>` key is `;` in my configs.
 | `<C-space>`                    | Toggle autocomplete        |
 | `<C-b>`                        | Toggle the file explorer   |
 | `<Leader>w`                    | Enter window switcher mode |
-| `:bd` | Close a buffer |
+| `:bd`                          | Close a buffer             |
+| `<Leader>d`                    | Open definition in new tab |
+| `:GitBlameToggle`              | Toggle blame mode          |
+| `:ter`                         | Open a terminal            |
+| `<Leader>sv`                   | Reload the `init.vim`      |
